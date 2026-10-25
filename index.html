@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ANOUK GAMES — play and learn with VAPOR, axiom and cherri in one place."><title>ANOUK GAMES</title><link rel="stylesheet" href="anouk-games.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+</head><body>
+
+<div id="intro-loader" role="status" aria-label="Loading ANOUK GAMES">
+  <div class="loader" aria-hidden="true">
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="line"></div>
+  </div>
+  <div class="intro-caption">Initializing experience</div>
+</div>
+
+
+<div class="matrix-bg" id="matrix" aria-hidden="true"></div><header><div class="head"><span class="brand">ANOUK GAMES</span><span class="count">10 sites</span></div></header>
+<main><section class="hero"><h1>ANOUK GAMES</h1><p>Pick a site below. Play and learn.</p></section><section><h2 class="section-title">Sites</h2><nav class="sites" id="sites" role="tablist" aria-label="Sites"></nav></section>
+<section class="viewer" id="viewer" role="tabpanel" aria-label="VAPOR"><div class="viewer-head"><span class="viewer-title" id="title">VAPOR</span><a class="open button" id="open" href="https://gelaoshi.global.ssl.fastly.net/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div><div class="frame-wrap"><iframe class="frame" id="frame" title="VAPOR" allow="fullscreen; autoplay; gamepad; clipboard-write" allowfullscreen></iframe><div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading game">
+  <div class="preloader" aria-hidden="true">
+    <div class="crack crack1"></div>
+    <div class="crack crack2"></div>
+    <div class="crack crack3"></div>
+    <div class="crack crack4"></div>
+    <div class="crack crack5"></div>
+  </div>
+  <div class="loading-label">ANOUK GAMES</div>
+  <div class="loading-subtitle">LOADING YOUR EXPERIENCE...</div>
+</div></div><p class="note">Blank screen? Some sites block embedding — use “Open in new tab”.</p></section></main>
+<script>
+const S=[["VAPOR","https://gelaoshi.global.ssl.fastly.net/"],["axiom","https://script.google.com/macros/s/AKfycbx1CDlpTe_rag8BKNIERKsdOA75eVZeNVdYYrCEqAy6JCDmG7GUw-h1OcmMQHistXCh/exec?id=DcTMvwyB6ge6qBcMswSYSerg4786865799968687"],["cherri","https://objectstorage.us-sanjose-1.oraclecloud.com/n/axjcou67ax5a/b/sciencelearning/o/index.html"],["🌌VOID","https://oda-loves-vng.renaca.com/study/chemistry/unit-6-YTBhMjllZDJiLlBxa2U4dG04STJ6cQ"],["⚡XYLORA","https://reciept.medicfamiliecraiova.ro/"],["🕶️ACHROMA","https://wuiq8b2bj7m.map.azionedge.net/"],["NEXORA","https://noterplusbunnyflash146330.b-cdn.net/"],["🎓DESYNC","https://desynctutoring.com/"],["🍒CHERRI","https://kicks-shop.com/"],["🧥MANTLE","https://wuiq8b2bj7m.map.azionedge.net/~/sj/dr2e8uoo/pr7jek5m/https%3A%2F%2Fmantle-menu.mantleunblocked.workers.dev%2F?%24rfp=strict-origin-when-cross-origin&%24io=https%3A%2F%2Fgetmantle.pages.dev"]];
+const k="アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルロワヲンガギグゲゴザダバパ";document.getElementById("matrix").innerHTML=Array.from({length:700},(_,i)=>"<span>"+k[i%k.length]+"</span>").join("");
+const nav=document.getElementById("sites"),frame=document.getElementById("frame"),loader=document.getElementById("loader");let timer;
+function choose(i){let [name,url]=S[i];[...nav.children].forEach((b,j)=>{b.setAttribute("aria-selected",j===i);b.querySelector(".pill").textContent=j===i?"Playing":"Open"});document.getElementById("title").textContent=name;document.getElementById("open").href=url;document.getElementById("viewer").setAttribute("aria-label",name);frame.title=name;loader.hidden=false;clearTimeout(timer);timer=setTimeout(()=>loader.hidden=true,10000);frame.src=url}
+S.forEach(([name],i)=>{let b=document.createElement("button");b.className="site button";b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected","false");b.setAttribute("aria-controls","viewer");b.innerHTML='<span class="site-name"></span><span class="pill"></span>';b.querySelector(".site-name").textContent=name;b.onclick=()=>choose(i);nav.appendChild(b)});frame.onload=()=>{loader.hidden=true;clearTimeout(timer)};choose(0);
+</script>
+<script>
+(function () {
+  const intro = document.getElementById('intro-loader');
+  if (!intro) return;
+  const hideIntro = () => {
+    intro.classList.add('is-hidden');
+    window.setTimeout(() => intro.remove(), 650);
+  };
+  if (document.readyState === 'complete') {
+    window.setTimeout(hideIntro, 1100);
+  } else {
+    window.addEventListener('load', () => window.setTimeout(hideIntro, 700), { once: true });
+  }
+  // Failsafe: never leave the page covered indefinitely.
+  window.setTimeout(hideIntro, 6000);
+})();
+</script>
+
+</body></html>
